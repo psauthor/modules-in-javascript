@@ -1,0 +1,14 @@
+{
+  "name": "before",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "npx tailwindcss -i ./css/site.css -o ./css/site.min.css -w",
+    "tw": "npx tailwindcss -i ./css/site.css -o ./css/site.min.css --minify",
+    "build:js": ""
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Some Website</title>
+  <link rel="stylesheet" href="css/site.min.css">
+  <!-- <script defer src="js/index.js"></script>
+  <script defer src="js/api.js"></script>
+  <script defer src="js/template.js"></script> -->
+  <script defer src="src/index.js" type="module"></script>
+</head>
+<body class="bg-gray-700 font-sans text-slate-800">
+  <div class="container mx-auto min-h-screen bg-blue-200 p-2">
+    <h1 class="text-2xl font-bold">Welcome to a website!</h1>
+    <hr class="border-gray-500 h-1" />
+    <button class="bg-green-700 hover:bg-green-600 border-2 border-green-300 rounded-lg text-white font-bold p-2 my-1" id="loadButton">Load...</button>
+    <div class="text-amber-600 hidden" id="busyMsg">Loading...</div>
+    <div class="grid grid-cols-3 gap-1" id="results">
+
+    </div>
+  </div>
+</body>
+</html>

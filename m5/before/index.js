@@ -1,0 +1,47 @@
+const http = require("http");
+const PORT = process.env.PORT || 5000;
+
+const people = [
+  {
+    id: 1,
+    name: "Shawn",
+    age: 42,
+  },
+  {
+    id: 2,
+    name: "Jake",
+    age: 22,
+  },
+  {
+    id: 3,
+    name: "Mike",
+    age: 32,
+  },
+];
+
+const routes = [
+  { pattern: "/api/people", result: people },
+  { pattern: "/api/people/count", result: people.length },
+  { pattern: "/api/people/1", result: people[0] },
+  { pattern: "/api/people/1/age", result: people[0].age },
+];
+
+const server = http.createServer((req, res) => {
+  routes.forEach((r) => {
+    if (r.pattern === req.url && req.method === "GET") {
+      res.writeHead(200, { "Content-Type": "application/json" });
+      res.write(JSON.stringify(r.result));
+      res.end();
+    }
+  });
+
+  if (!res.writableEnded) {
+    // No routes hit
+    res.writeHead(404, { "Content-Type": "application/json" });
+    res.end(JSON.stringify({ message: "Route not found" }));
+  }
+});
+
+server.listen(PORT, () => {
+  console.log(`server started on port: ${PORT}`);
+});
